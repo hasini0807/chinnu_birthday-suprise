@@ -1,0 +1,22 @@
+{
+  "name": "birthday-surprise",
+  "version": "1.0.0",
+  "description": "Interactive birthday surprise desktop experience",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.birthday.surprise",
+    "productName": "Birthday Surprise",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "src/**/*", "package.json"],
+    "win": { "target": ["nsis"], "artifactName": "Birthday-Surprise-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true }
+  }
+}
